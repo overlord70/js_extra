@@ -1,86 +1,57 @@
-let products = [
+let people = [
     {
-        name: "soda",
-        price: 10000,
-        godno: 2040
+        name: "bobur",
+        age: 43,
+        isMarried: false,
+        wifes: ['kamila', 'safir', 'allayor']
     },
     {
-        name: "chocolate",
-        price: 8000,
-        godno: 2024
+        name: "ismail",
+        age: 12,
+        isMarried: true,
+        wifes: ['nikita', 'malika']
     },
     {
-        name: "ice cream",
-        price: 13000,
-        godno: 2023
+        name: "allayor",
+        age: 14,
+        isMarried: true,
+        wifes: ['denis', 'dima', 'dimon', 'xbegim']
     },
     {
-        name: "yogurt",
-        price: 9000,
-        godno: 2023
+        name: "sarodr ml",
+        age: 18,
+        isMarried: false,
+        wifes: ['safiya']
     },
     {
-        name: "lienergy",
-        price: 21000,
-        godno: 2024
+        name:'Tangir',
+        age: 15,
+        isMarried: true,
+        wifes: ['Marina', 'Safiya', 'Malika', 'Sarvara', 'Alisa']
     },
     {
-        name: "fusetea",
-        price: 7000,
-        godno: 2024
-    },
-    {
-        name: "lays",
-        price: 18000,
-        godno: 2023
-    },
-    {
-        name: "18+",
-        price: 8000,
-        godno: 2024
-    },
-    {
-        name: "namak",
-        price: 2000,
-        godno: 2024
-    },
-    {
-        name: "orange juice",
-        price: 10000,
-        godno: 2024
-    },
-    {
-        name: "clear man",
-        price: 50000,
-        godno: 2025
-    },
-    {
-        name: "saxar",
-        price: 12000,
-        godno: 2025
-    },
-    {
-        name: "moloko",
-        price: 11000,
-        godno: 2023
-    },
-    {
-        name: "pechenki",
-        price: 15000,
-        godno: 2024
-    },
-    {
-        name: "muka",
-        price: 150000,
-        godno: 2024
-
-    },
+        name: 'Sardor st',
+        age: 17,
+        isMarried: false,
+        wifes:['Anisa']
+    }
 ]
-
-let discount = +prompt('discount %')
-
-for(let item of products) {
-    console.log(item);
-    console.table(item.price -= item.price /  100 * `${discount}` )
-   
+let guilties = []
+let normal = []
+for(let i = 0; i < people.length; i++){
+    if(people[i].age < 18 && people[i].wifes.length > 1){
+        guilties.push(people[i].name , 
+                      people[i].age, 
+                      people[i].wifes, 
+                      people[i].isMarried)
+    } else if (people[i].age >= 18 && people[i].wifes.length === 1){
+        normal.push(people[i].name , 
+                    people[i].age,
+                    people[i].wifes,
+                    people[i].isMarried)
+    }
 }
+console.table(guilties)
+console.table(normal)
+
+//document.write (guilties ,normal)
